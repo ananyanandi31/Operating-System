@@ -15,40 +15,46 @@ int main()
 		cin>>ET[i];
     } 
     
-    	CT[0]=ET[0];
-    		for(int i=1;i<=p-1;i++)
-    		{
-    			
-				if(CT[i-1]<AT[i])
-				{
-					CT[i]=AT[i]+ET[i];
-				}
-				if(CT[i-1]>AT[i])
-				{
-					CT[i]=CT[i-1]+ET[i];
-				}
-			}
-			for(int i=0;i<=p-1;i++)
+   	CT[0]=ET[0];
+	   for(int i=1;i<=p-1;i++)
+	   {			
+			if(CT[i-1]<AT[i])
 			{
-				cout<<"completion time of process - P"<<i<<"  "<<CT[i]<<endl;
+				CT[i]=AT[i]+ET[i];
 			}
+			if(CT[i-1]>AT[i])
+			{
+				CT[i]=CT[i-1]+ET[i];
+			}
+		}
 		for(int i=0;i<=p-1;i++)
 		{
 			TAT[i]=CT[i]-AT[i];
-			cout<<"turn arround time for process - P"<<i<<"  "<<TAT[i]<<endl;
 		}
 		for(int i=0;i<=p-1;i++)
 		{
 			WT[i]=TAT[i]-ET[i];
-			cout<<"waiting time for process - P"<<i<<"  "<<WT[i]<<endl;
 		}
 		
-		for(int i=0;i<=p-1;i++)
+		for(int i=0;i<p;i++)
 		{
-			cout<<"Arrival time for P"<<i+1<<" "<<AT[i]<<endl;
-			cout<<"Execution time for P"<<i+1<<" "<<ET[i]<<endl;
-			cout<<"Turn around time for P"<<i+1<<" "<<TAT[i]<<endl;
-			cout<<"Waiting time for P"<<i+1<<" "<<WT[i]<<endl;
+			cout<<"Arrival time for P"<<i+1<<"="<<AT[i]<<endl;
+		}
+		for(int i=0;i<p;i++)
+		{
+			cout<<"Execution time for P"<<i+1<<"="<<ET[i]<<endl;
+		}
+		for(int i=0;i<p;i++)
+		{
+			cout<<"completion time of process P"<<i<<"="<<CT[i]<<endl;
+		}
+		for(int i=0;i<p;i++)
+		{
+			cout<<"Turn around time for P"<<i+1<<"="<<TAT[i]<<endl;
+		}
+		for(int i=0;i<p;i++)
+		{
+			cout<<"Waiting time for P"<<i+1<<"="<<WT[i]<<endl;
 		}
 	return 0;
 }
