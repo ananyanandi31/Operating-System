@@ -28,7 +28,7 @@ main()
 		cin>>max[i][j];
 		}	
 	 }
-	cout<<"Enter no of instances availabel"<<endl;
+	cout<<"Enter no of instances available"<<endl;
 	  for(int j=0;j<res;j++)
 	   cin>>avail[j];
      cout<<"Need matrix="<<endl;
